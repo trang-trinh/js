@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Crash Course | Events</title>
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<style>
+		body{
+			font-size: 17px;
+			font-family: arial;
+			background: #f4f4f4;
+			line-height: 1.5em;
+		}
+		header{
+			background:#333;
+			color:#fff;
+			padding:20px;
+			text-align: center;
+			border-bottom: 4px #000 solid;
+			margin-bottom: 10px;
+		}
+		#container{
+			width:90%;
+			margin:auto;
+			padding:10px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>jQuery Crash Course | Events</h1>
+	</header>
+	<div id="container">
+		<hr>
+		<form method="post">
+		    <input id="username" type="text" value="" placeholder="Username"> <br/><br/>
+		    <input id="password" type="password" value="" placeholder="Password"> <br/><br/>
+		    <input type="submit" value="LOGIN" id="loginbtn">
+		</form>
+
+		<hr>
+
+		<div id="wrapper" style="width: 200px;height: 200px;overflow: scroll;">
+		    <p>Magento là một mã nguồn mở tạo web thương mại điện tử đã được ra mắt vào ngày 31 tháng 3 năm 2008. Magento được phát triển bởi Varien, với sự giúp đỡ từ các lập trình viên trong cộng đồng mã nguồn mở, nhưng chỉ được sở hữu bởi Magento Inc. Magento được xây dựng trên nền tảng Zend Framework. Nó sử dụng các mô hình thực thể thuộc tính giá trị cơ sở dữ liệu (EAV – entity-attribute-value) để lưu trữ dữ liệu.</p>
+		</div>
+<div id="result">
+ 
+</div>
+	</div>
+
+
+	<script>
+		$(document).ready(function(){
+			$("#loginbtn").click(function () {
+            var username = $('#username').val();
+            var password = $('#password').val();
+ 
+            if (username == "" || password == ""){
+                alert("Vui lòng nhập đầy đủ thông tin");
+                return false;
+            }
+            else {
+                alert("Thông tin hợp lệ");
+                return true;
+            }
+        });
+		});
+		var time = 0;
+		$(document).ready(function(){
+		    $('#wrapper').scroll(function(){
+		        time++;
+		        $('#result').html("Bạn đang scroll lần thứ " + time);
+		    });
+		});
+	</script>
+</body>
+</html>
